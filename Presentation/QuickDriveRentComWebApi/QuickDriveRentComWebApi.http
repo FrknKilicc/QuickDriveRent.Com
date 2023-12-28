@@ -1,0 +1,6 @@
+@QuickDriveRentComWebApi_HostAddress = http://localhost:5209
+
+GET {{QuickDriveRentComWebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
