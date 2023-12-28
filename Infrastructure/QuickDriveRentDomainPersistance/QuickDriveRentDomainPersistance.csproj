@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\QuickDriveRentCom.Application\QuickDriveRentCom.Application.csproj" />
     <ProjectReference Include="..\..\Core\QuickDriveRentDomain\QuickDriveRentDomain.csproj" />
   </ItemGroup>
 
