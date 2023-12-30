@@ -6,9 +6,11 @@ using QuickDriveRentCom.Application.Features.CQRS.Handlers.CategoryHandler;
 using QuickDriveRentCom.Application.Features.CQRS.Handlers.ContactHandler;
 using QuickDriveRentCom.Application.Interfaces;
 using QuickDriveRentCom.Application.Interfaces.CarInterfaces;
+using QuickDriveRentCom.Application.Services;
 using QuickDriveRentDomainPersistance.Context;
 using QuickDriveRentDomainPersistance.Repositories;
 using QuickDriveRentDomainPersistance.Repositories.CarRepositories;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -55,6 +57,9 @@ builder.Services.AddScoped<CreateContactCommandHandler>();
 builder.Services.AddScoped<GetContactByIdQueryHandler>();
 builder.Services.AddScoped<UpdateContactCommandHandler>();
 builder.Services.AddScoped<RemoveContactCommandHandler>();
+
+
+builder.Services.AddApplicationService(builder.Configuration);
 
 
 builder.Services.AddControllers();
