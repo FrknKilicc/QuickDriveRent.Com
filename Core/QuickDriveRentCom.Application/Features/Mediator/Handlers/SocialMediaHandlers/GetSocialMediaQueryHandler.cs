@@ -1,0 +1,40 @@
+﻿using MediatR;
+using QuickDriveRentCom.Application.Features.Mediator.Queries.SocialMediaQueries;
+using QuickDriveRentCom.Application.Features.Mediator.Results.FeatureResults;
+using QuickDriveRentCom.Application.Features.Mediator.Results.SocialMediaResults;
+using QuickDriveRentCom.Application.Interfaces;
+using QuickDriveRentDomain.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace QuickDriveRentCom.Application.Features.Mediator.Handlers.SocialMediaHandlers
+{
+    public class GetSocialMediaQueryHandler : IRequestHandler<GetSocialMediaQuery, List<GetSocialMediaQueryResult>>
+    {
+        private readonly IRepository<SocialMedia> _repository;
+
+        public GetSocialMediaQueryHandler(IRepository<SocialMedia> repository)
+        {
+            _repository = repository;
+        }
+
+        public async Task<List<GetSocialMediaQueryResult>> Handle(GetSocialMediaQuery request, CancellationToken cancellationToken)
+        {
+            var values = await _repository.GetAllAsync();
+            return values.Select(x => new GetSocialMediaQueryResult
+            {
+                SocialMediaID = x.SocialMediaID,
+                Name = x.Name,
+                Icon = x.Icon,
+                Url= x.Url,
+            }).ToList();
+        }
+
+       
+
+      
+    }
+}
