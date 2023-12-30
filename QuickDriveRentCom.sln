@@ -5,17 +5,21 @@ VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{22D765D2-6F1D-4741-BDC6-ACDF2F95822D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickDriveRentDomain", "Core\QuickDriveRentDomain\QuickDriveRentDomain.csproj", "{3BB6FB2C-28D8-44F6-A9C0-39DE269DD2D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickDriveRentDomain", "Core\QuickDriveRentDomain\QuickDriveRentDomain.csproj", "{3BB6FB2C-28D8-44F6-A9C0-39DE269DD2D3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{74409798-63CC-438E-AD93-B609349C6400}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickDriveRentDomainPersistance", "Infrastructure\QuickDriveRentDomainPersistance\QuickDriveRentDomainPersistance.csproj", "{FCCAE74E-62D3-4FCF-9FDE-8BAE79D474CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickDriveRentDomainPersistance", "Infrastructure\QuickDriveRentDomainPersistance\QuickDriveRentDomainPersistance.csproj", "{FCCAE74E-62D3-4FCF-9FDE-8BAE79D474CC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{D78813E1-B420-4F8C-B7F5-B5FAE90074CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickDriveRentComWebApi", "Presentation\QuickDriveRentComWebApi\QuickDriveRentComWebApi.csproj", "{110DB4F3-3DE3-44C2-A2B7-A76AB1749768}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickDriveRentComWebApi", "Presentation\QuickDriveRentComWebApi\QuickDriveRentComWebApi.csproj", "{110DB4F3-3DE3-44C2-A2B7-A76AB1749768}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickDriveRentCom.Application", "Core\QuickDriveRentCom.Application\QuickDriveRentCom.Application.csproj", "{BA0242AA-BC86-4825-9383-1CB39E661050}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickDriveRentCom.Application", "Core\QuickDriveRentCom.Application\QuickDriveRentCom.Application.csproj", "{BA0242AA-BC86-4825-9383-1CB39E661050}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontends", "Frontends", "{86DCF51B-37DF-40F5-AC7D-E80C85DE5D09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickDriveRentComWebUI", "Frontends\QuickDriveRentComWebUI\QuickDriveRentComWebUI.csproj", "{5A4DE711-B3EA-4D42-BBE3-B4C08B1733D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,10 @@ Global
 		{BA0242AA-BC86-4825-9383-1CB39E661050}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA0242AA-BC86-4825-9383-1CB39E661050}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA0242AA-BC86-4825-9383-1CB39E661050}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A4DE711-B3EA-4D42-BBE3-B4C08B1733D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A4DE711-B3EA-4D42-BBE3-B4C08B1733D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A4DE711-B3EA-4D42-BBE3-B4C08B1733D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A4DE711-B3EA-4D42-BBE3-B4C08B1733D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +56,7 @@ Global
 		{FCCAE74E-62D3-4FCF-9FDE-8BAE79D474CC} = {74409798-63CC-438E-AD93-B609349C6400}
 		{110DB4F3-3DE3-44C2-A2B7-A76AB1749768} = {D78813E1-B420-4F8C-B7F5-B5FAE90074CA}
 		{BA0242AA-BC86-4825-9383-1CB39E661050} = {22D765D2-6F1D-4741-BDC6-ACDF2F95822D}
+		{5A4DE711-B3EA-4D42-BBE3-B4C08B1733D8} = {86DCF51B-37DF-40F5-AC7D-E80C85DE5D09}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CF8108CE-7054-4302-B7CC-310A6B615F1D}
