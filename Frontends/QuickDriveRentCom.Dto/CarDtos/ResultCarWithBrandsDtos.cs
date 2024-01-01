@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuickDriveRentCom.Dto.CarDtos
 {
-    public class ResultCarWithBrandsDots
+    public class ResultCarWithBrandsDtos
     {
         public int CarID { get; set; }
         public int BrandID { get; set; }
