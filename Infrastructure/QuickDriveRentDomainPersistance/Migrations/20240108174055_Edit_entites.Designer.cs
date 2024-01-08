@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QuickDriveRentDomainPersistance.Context;
 
@@ -11,9 +12,11 @@ using QuickDriveRentDomainPersistance.Context;
 namespace QuickDriveRentDomainPersistance.Migrations
 {
     [DbContext(typeof(QuickDriveRentComContext))]
-    partial class QuickDriveRentComContextModelSnapshot : ModelSnapshot
+    [Migration("20240108174055_Edit_entites")]
+    partial class Edit_entites
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -109,7 +112,11 @@ namespace QuickDriveRentDomainPersistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AuthorId")
+                    b.Property<string>("AuthorId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("AuthorId1")
                         .HasColumnType("int");
 
                     b.Property<int?>("BlogId")
@@ -131,7 +138,7 @@ namespace QuickDriveRentDomainPersistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AuthorId");
+                    b.HasIndex("AuthorId1");
 
                     b.HasIndex("BlogId");
 
@@ -490,7 +497,7 @@ namespace QuickDriveRentDomainPersistance.Migrations
                 {
                     b.HasOne("QuickDriveRentDomain.Entities.Author", "Author")
                         .WithMany()
-                        .HasForeignKey("AuthorId")
+                        .HasForeignKey("AuthorId1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

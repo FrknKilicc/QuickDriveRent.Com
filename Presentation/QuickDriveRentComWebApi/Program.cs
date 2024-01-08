@@ -59,6 +59,8 @@ builder.Services.AddScoped<GetContactByIdQueryHandler>();
 builder.Services.AddScoped<UpdateContactCommandHandler>();
 builder.Services.AddScoped<RemoveContactCommandHandler>();
 
+builder.Services.AddScoped<RemoveContactCommandHandler>();
+
 
 builder.Services.AddApplicationService(builder.Configuration);
 

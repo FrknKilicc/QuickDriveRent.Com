@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QuickDriveRentDomainPersistance.Context;
 
@@ -11,9 +12,11 @@ using QuickDriveRentDomainPersistance.Context;
 namespace QuickDriveRentDomainPersistance.Migrations
 {
     [DbContext(typeof(QuickDriveRentComContext))]
-    partial class QuickDriveRentComContextModelSnapshot : ModelSnapshot
+    [Migration("20240108173415_Edit_Author_Props")]
+    partial class Edit_Author_Props
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,6 +58,16 @@ namespace QuickDriveRentDomainPersistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CoverImgUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -68,6 +81,8 @@ namespace QuickDriveRentDomainPersistance.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("Authors");
                 });
@@ -109,21 +124,15 @@ namespace QuickDriveRentDomainPersistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AuthorId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("BlogId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("CoverImgUrl")
+                    b.Property<string>("AuthorId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CreatedDateTime")
-                        .HasColumnType("datetime2");
+                    b.Property<int>("AuthorId1")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CategoryID")
+                        .HasColumnType("int");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -131,11 +140,9 @@ namespace QuickDriveRentDomainPersistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AuthorId");
+                    b.HasIndex("AuthorId1");
 
-                    b.HasIndex("BlogId");
-
-                    b.HasIndex("CategoryId");
+                    b.HasIndex("CategoryID");
 
                     b.ToTable("Blogs");
                 });
@@ -486,27 +493,30 @@ namespace QuickDriveRentDomainPersistance.Migrations
                     b.ToTable("Testimonials");
                 });
 
-            modelBuilder.Entity("QuickDriveRentDomain.Entities.Blog", b =>
+            modelBuilder.Entity("QuickDriveRentDomain.Entities.Author", b =>
                 {
-                    b.HasOne("QuickDriveRentDomain.Entities.Author", "Author")
-                        .WithMany()
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("QuickDriveRentDomain.Entities.Blog", null)
-                        .WithMany("Blogs")
-                        .HasForeignKey("BlogId");
-
                     b.HasOne("QuickDriveRentDomain.Entities.Category", "Category")
-                        .WithMany("Blogs")
+                        .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Author");
-
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("QuickDriveRentDomain.Entities.Blog", b =>
+                {
+                    b.HasOne("QuickDriveRentDomain.Entities.Author", "Author")
+                        .WithMany("Blogs")
+                        .HasForeignKey("AuthorId1")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("QuickDriveRentDomain.Entities.Category", null)
+                        .WithMany("Blogs")
+                        .HasForeignKey("CategoryID");
+
+                    b.Navigation("Author");
                 });
 
             modelBuilder.Entity("QuickDriveRentDomain.Entities.Car", b =>
@@ -569,7 +579,7 @@ namespace QuickDriveRentDomainPersistance.Migrations
                     b.Navigation("Pricing");
                 });
 
-            modelBuilder.Entity("QuickDriveRentDomain.Entities.Blog", b =>
+            modelBuilder.Entity("QuickDriveRentDomain.Entities.Author", b =>
                 {
                     b.Navigation("Blogs");
                 });
