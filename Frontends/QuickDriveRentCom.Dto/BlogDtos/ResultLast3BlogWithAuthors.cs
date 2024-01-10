@@ -1,13 +1,12 @@
-﻿using QuickDriveRentDomain.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuickDriveRentCom.Application.Features.Mediator.Results.BlogResults
+namespace QuickDriveRentCom.Dto.BlogDtos
 {
-    public class GetBlogQueryResult
+    public class ResultLast3BlogWithAuthors
     {
         public int Id { get; set; }
         public string Title { get; set; }
@@ -15,5 +14,6 @@ namespace QuickDriveRentCom.Application.Features.Mediator.Results.BlogResults
         public string CoverImgUrl { get; set; }
         public DateTime CreatedDateTime { get; set; }
         public int CategoryId { get; set; }
+        public string AuthorName { get; set; }
     }
 }

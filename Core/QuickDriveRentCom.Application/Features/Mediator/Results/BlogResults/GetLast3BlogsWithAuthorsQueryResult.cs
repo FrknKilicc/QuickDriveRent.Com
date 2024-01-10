@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QuickDriveRentCom.Application.Features.Mediator.Results.BlogResults
 {
-    public class GetBlogQueryResult
+    public class GetLast3BlogsWithAuthorsQueryResult
     {
         public int Id { get; set; }
         public string Title { get; set; }
@@ -15,5 +15,6 @@ namespace QuickDriveRentCom.Application.Features.Mediator.Results.BlogResults
         public string CoverImgUrl { get; set; }
         public DateTime CreatedDateTime { get; set; }
         public int CategoryId { get; set; }
+        public string AuthorName { get; set; }
     }
 }
