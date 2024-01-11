@@ -11,5 +11,6 @@ namespace QuickDriveRentCom.Application.Interfaces.CarInterfaces
     {
         List<Car> GetCarsListWithBrand();
         List<Car> GetLast5CarsWithBrand();
+
     }
 }

@@ -26,6 +26,7 @@ namespace QuickDriveRentDomainPersistance.Repositories.CarRepositories
             
         }
 
+      
         public List<Car> GetLast5CarsWithBrand()
         {
             var values = _context.Cars.Include(_x => _x.Brand).OrderByDescending(x => x.CarID).Take(5).ToList();
