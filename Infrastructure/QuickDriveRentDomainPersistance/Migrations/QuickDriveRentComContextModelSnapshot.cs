@@ -122,6 +122,10 @@ namespace QuickDriveRentDomainPersistance.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -452,6 +456,28 @@ namespace QuickDriveRentDomainPersistance.Migrations
                     b.ToTable("SocialMedias");
                 });
 
+            modelBuilder.Entity("QuickDriveRentDomain.Entities.TagCloud", b =>
+                {
+                    b.Property<int>("TagCloudId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TagCloudId"));
+
+                    b.Property<int>("BlogId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TagCloudId");
+
+                    b.HasIndex("BlogId");
+
+                    b.ToTable("TagClouds");
+                });
+
             modelBuilder.Entity("QuickDriveRentDomain.Entities.Testimonial", b =>
                 {
                     b.Property<int>("TestimonialID")
@@ -558,6 +584,22 @@ namespace QuickDriveRentDomainPersistance.Migrations
                     b.Navigation("Car");
 
                     b.Navigation("Pricing");
+                });
+
+            modelBuilder.Entity("QuickDriveRentDomain.Entities.TagCloud", b =>
+                {
+                    b.HasOne("QuickDriveRentDomain.Entities.Blog", "Blog")
+                        .WithMany("TagClouds")
+                        .HasForeignKey("BlogId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Blog");
+                });
+
+            modelBuilder.Entity("QuickDriveRentDomain.Entities.Blog", b =>
+                {
+                    b.Navigation("TagClouds");
                 });
 
             modelBuilder.Entity("QuickDriveRentDomain.Entities.Brand", b =>

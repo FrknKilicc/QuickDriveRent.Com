@@ -13,9 +13,14 @@ namespace QuickDriveRentCom.Application.Features.Mediator.Results.BlogResults
         public string Title { get; set; }
         public int AuthorId { get; set; }
         public string AuthorName { get; set; }
+        public string AuthorDesc { get; set; }
+        public string AuthorImgUrl { get; set; }
         public int CategoryName { get; set; }
         public string CoverImgUrl { get; set; }
         public DateTime CreatedDateTime { get; set; }
         public int CategoryId { get; set; }
+        public string Description { get; set; }
+      
+            
     }
 }

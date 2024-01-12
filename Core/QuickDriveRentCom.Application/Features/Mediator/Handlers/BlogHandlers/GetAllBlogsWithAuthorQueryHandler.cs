@@ -27,12 +27,15 @@ namespace QuickDriveRentCom.Application.Features.Mediator.Handlers.BlogHandlers
                 {
                     Id = x.Id,
                     AuthorId = x.AuthorId,
-
                     CategoryId = x.CategoryId,
                     CoverImgUrl = x.CoverImgUrl,
                     CreatedDateTime = x.CreatedDateTime,
                     Title = x.Title,
-                    AuthorName = x.Author.Name
+                    AuthorName = x.Author.Name,
+                    Description = x.Description,
+                    AuthorDesc=x.Author.Description,
+                    AuthorImgUrl = x.Author.ImgUrl
+                    
                 }).ToList();
         }
     }

@@ -26,14 +26,19 @@ namespace QuickDriveRentCom.Application.Features.Mediator.Handlers.BlogHandlers
             var values = await _repository.GetByIdAsync(request.Id);
             return new GetBlogByIdQueryResult
             {
+
              Title= values.Title,
              AuthorId= values.AuthorId,
              Id= values.Id,
              CoverImgUrl= values.CoverImgUrl,
              CreatedDateTime= values.CreatedDateTime,
              CategoryId= values.CategoryId,
+             Description= values.Description,
+
+            
                
             };
+
         }
     }
 }

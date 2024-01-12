@@ -8,7 +8,7 @@ namespace QuickDriveRentCom.Dto.BlogDtos
 {
     public class ResultAllBlogsWithAuthorDto
     {
-            public int id { get; set; }
+            public int Id { get; set; }
             public string title { get; set; }
             public int authorId { get; set; }
             public string authorName { get; set; }
@@ -16,7 +16,10 @@ namespace QuickDriveRentCom.Dto.BlogDtos
             public string coverImgUrl { get; set; }
             public DateTime createdDateTime { get; set; }
             public int categoryId { get; set; }
-        
+             public string Description { get; set; }
+             public string AuthorDesc { get; set; }
+            public string AuthorImgUrl { get; set; }
+
 
     }
 }
