@@ -31,7 +31,7 @@ namespace QuickDriveRentComWebUI.Controllers
         {
             ViewBag.v1 = "Bloglar";
             ViewBag.v2 = "Blog Detayı";
-            ViewBag.Blogid = id;
+            ViewBag.Id = id;
             return View();
         }
     }

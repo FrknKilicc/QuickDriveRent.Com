@@ -4,6 +4,7 @@ using QuickDriveRentCom.Application.Features.CQRS.Handlers.BrandHandler;
 using QuickDriveRentCom.Application.Features.CQRS.Handlers.CarHandler;
 using QuickDriveRentCom.Application.Features.CQRS.Handlers.CategoryHandler;
 using QuickDriveRentCom.Application.Features.CQRS.Handlers.ContactHandler;
+using QuickDriveRentCom.Application.Features.RepositoryPattern;
 using QuickDriveRentCom.Application.Interfaces;
 using QuickDriveRentCom.Application.Interfaces.BlogInterfaces;
 using QuickDriveRentCom.Application.Interfaces.CarInterfaces;
@@ -15,6 +16,7 @@ using QuickDriveRentDomainPersistance.Repositories;
 using QuickDriveRentDomainPersistance.Repositories.BlogRepositories;
 using QuickDriveRentDomainPersistance.Repositories.CarPricingRepositories;
 using QuickDriveRentDomainPersistance.Repositories.CarRepositories;
+using QuickDriveRentDomainPersistance.Repositories.CommentRepositories;
 using QuickDriveRentDomainPersistance.Repositories.TagCloudRepositories;
 
 
@@ -27,6 +29,7 @@ builder.Services.AddScoped(typeof(ICarRepository),typeof (CarRepository));
 builder.Services.AddScoped(typeof(IBlogRepository),typeof (BlogRepository));
 builder.Services.AddScoped(typeof(ICarPricingRepository),typeof (CarPricingRepository));
 builder.Services.AddScoped(typeof(ITagCloudRepository),typeof (TagCloudRepository));
+builder.Services.AddScoped(typeof(IGenericRepository<>),typeof (CommentRepository<>));
 
 builder.Services.AddScoped<GetAboutByIdQueryHandler>();
 builder.Services.AddScoped<GetAboutQueryHandler>();

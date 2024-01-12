@@ -12,21 +12,18 @@ using System.Threading.Tasks;
 
 namespace QuickDriveRentCom.Application.Features.Mediator.Handlers.BlogHandlers
 {
-    public class GetBlogByIdQueryHandler : IRequestHandler<GetBlogByIdQuery, GetBlogByIdQueryResult>
+    public class GetBlogByIdQueryHandler : IRequestHandler<GetBlogByIdQuery,GetBlogByIdQueryResult>
     {
         private readonly IRepository<Blog> _repository;
-
         public GetBlogByIdQueryHandler(IRepository<Blog> repository)
         {
             _repository = repository;
         }
-
         public async Task<GetBlogByIdQueryResult> Handle(GetBlogByIdQuery request, CancellationToken cancellationToken)
         {
             var values = await _repository.GetByIdAsync(request.Id);
             return new GetBlogByIdQueryResult
             {
-
              Title= values.Title,
              AuthorId= values.AuthorId,
              Id= values.Id,
@@ -34,9 +31,6 @@ namespace QuickDriveRentCom.Application.Features.Mediator.Handlers.BlogHandlers
              CreatedDateTime= values.CreatedDateTime,
              CategoryId= values.CategoryId,
              Description= values.Description,
-
-            
-               
             };
 
         }

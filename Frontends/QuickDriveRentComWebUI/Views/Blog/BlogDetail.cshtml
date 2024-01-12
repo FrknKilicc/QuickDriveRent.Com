@@ -11,11 +11,11 @@
 
 
             <div class="col-md-4 sidebar ftco-animate">
-                @await Component.InvokeAsync("_BlogDetailSideBarSearchBoxComponentPartial", new { id = ViewBag.Id })
-                @await Component.InvokeAsync("_BlogDetailsCategoryViewComponentPartial", new { id = ViewBag.Id })
-                @await Component.InvokeAsync("_BlogDetailsRecentBlogsComponentPartial", new { id = ViewBag.Id })
-                @await Component.InvokeAsync("_BlogDetailsTagCloudComponentPartial", new { id = ViewBag.Id })
-                @await Component.InvokeAsync("_BlogDetailsParagraphComponentPartial", new { id = ViewBag.Id })
+                @await Component.InvokeAsync("_BlogDetailSideBarSearchBoxComponentPartial")
+                @await Component.InvokeAsync("_BlogDetailsCategoryViewComponentPartial")
+                @await Component.InvokeAsync("_BlogDetailsRecentBlogsComponentPartial")
+                @await Component.InvokeAsync("_BlogDetailsTagCloudComponentPartial")
+                @await Component.InvokeAsync("_BlogDetailsParagraphComponentPartial")
             </div>
 
         </div>
