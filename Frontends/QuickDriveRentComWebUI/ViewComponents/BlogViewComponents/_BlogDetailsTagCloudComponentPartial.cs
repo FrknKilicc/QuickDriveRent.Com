@@ -21,7 +21,7 @@ namespace QuickDriveRentComWebUI.ViewComponents.BlogViewComponents
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject <List<ResultGetByIBlogIdTagCloudsDto>>(jsonData);
+                var values =JsonConvert.DeserializeObject<List<ResultGetByIBlogIdTagCloudsDto>>(jsonData);
                 return View(values);
             }
 

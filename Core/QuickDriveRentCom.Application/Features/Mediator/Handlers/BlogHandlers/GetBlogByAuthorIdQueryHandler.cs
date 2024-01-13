@@ -24,12 +24,14 @@ namespace QuickDriveRentCom.Application.Features.Mediator.Handlers.BlogHandlers
             var values =  _repository.GetBlogByAuthorId(request.Id);
             return values.Select(x => new GetBlogByAuthorIdQueryResult
             {
+                Id=x.Id,
                 AuthorId = x.AuthorId,
                 AuthorName = x.Author.Name,
                 AuthorDesc = x.Author.Description,
                 AuthorImgUrl = x.Author.ImgUrl
 
             }).ToList();
+        
         }
     }
 }
