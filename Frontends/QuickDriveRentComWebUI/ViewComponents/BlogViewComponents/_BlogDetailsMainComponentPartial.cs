@@ -7,12 +7,10 @@ namespace QuickDriveRentComWebUI.ViewComponents.BlogViewComponents
     public class _BlogDetailsMainComponentPartial:ViewComponent
     {
         private readonly IHttpClientFactory _httpClientFactory;
-
         public _BlogDetailsMainComponentPartial(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
-
         public async Task<IViewComponentResult> InvokeAsync(int id)
         {
             ViewBag.Id = id;
